@@ -17,12 +17,12 @@ public class ColoniaDeVacaciones : MonoBehaviour
 
         if (infantiles < 0 || infantiles > 100)
         {
-            Debug.Log("ERROR: Cantidad de alumnos infantiles no valida");
+            Debug.Log("ERROR: Cantidad de alumnos infantiles no valida (min 0 y max 100)");
             return;
         }
         if (juveniles < 0 || juveniles > 100)
         {
-            Debug.Log("ERROR: Cantidad de juveniles no valida");
+            Debug.Log("ERROR: Cantidad de juveniles no valida (min 0 y max 100)");
             return;
         }
 
