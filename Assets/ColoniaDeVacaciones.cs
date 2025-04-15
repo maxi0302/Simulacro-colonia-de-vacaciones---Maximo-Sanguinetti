@@ -8,6 +8,7 @@ public class ColoniaDeVacaciones : MonoBehaviour
     public int juveniles;
     int profInfantiles;
     int profJuveniles;
+    int profesTotales;
     int cordinadores;
     int listaDeEspera;
 
@@ -31,8 +32,14 @@ public class ColoniaDeVacaciones : MonoBehaviour
 
         profInfantiles = infantiles / 10;
         profJuveniles = juveniles / 20;
+        profesTotales = profInfantiles + profJuveniles;
 
-        cordinadores = (profInfantiles + profJuveniles) / 5;
+        if (profesTotales % 5 != 0)
+        {
+            cordinadores = 1;
+            profesTotales -= profesTotales % 5;
+        }
+        cordinadores += profesTotales / 5;
 
         Debug.Log("Se necesitan " + profInfantiles + " profesores para los inscriptos infantiles");
         Debug.Log("Se necesitan " + profJuveniles + " profesores para lo inscriptos juveniles");

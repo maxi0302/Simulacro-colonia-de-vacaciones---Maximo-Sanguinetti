@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e51232b8868a54a9360d7db498501e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infantiles: 0
-  juveniles: 0
+  infantiles: 100
+  juveniles: 80
 --- !u!4 &152158828
 Transform:
   m_ObjectHideFlags: 0
