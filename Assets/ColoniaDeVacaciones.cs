@@ -9,15 +9,35 @@ public class ColoniaDeVacaciones : MonoBehaviour
     int profInfantiles;
     int profJuveniles;
     int cordinadores;
+    int listaDeEspera;
 
     void Start()
     {
-        if (infantiles < 0 || juveniles < 0)
+
+        if (infantiles < 0 || infantiles > 100)
         {
-            Debug.Log("ERROR: Cantidad de alumnos no valida");
+            Debug.Log("ERROR: Cantidad de alumnos infantiles no valida");
             return;
         }
-        
+        if (juveniles < 0 || juveniles > 100)
+        {
+            Debug.Log("ERROR: Cantidad de juveniles no valida");
+            return;
+        }
+
+        listaDeEspera = infantiles % 10 + juveniles % 20;
+        infantiles -= infantiles % 10;
+        juveniles -= juveniles % 20;
+
+        profInfantiles = infantiles / 10;
+        profJuveniles = juveniles / 20;
+
+        cordinadores = (profInfantiles + profJuveniles) / 5;
+
+        Debug.Log("Se necesitan " + profInfantiles + " profesores para los inscriptos infantiles");
+        Debug.Log("Se necesitan " + profJuveniles + " profesores para lo inscriptos juveniles");
+        Debug.Log("Se necesitan " + cordinadores + " cordinadores");
+        Debug.Log("Hay " + listaDeEspera + " alumnos en lista de espera");
     }
 
     // Update is called once per frame
